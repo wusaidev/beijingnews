@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\color\\vpi__light_theme.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\exploded-aar\\BeijingNews\\ViewPagerIndicator_library\\unspecified\\res\\color\\vpi__light_theme.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\color\\vpi__dark_theme.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\exploded-aar\\BeijingNews\\ViewPagerIndicator_library\\unspecified\\res\\color\\vpi__dark_theme.xml"
+    }
+]

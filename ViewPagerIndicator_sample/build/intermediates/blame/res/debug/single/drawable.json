@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_indicator.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\exploded-aar\\BeijingNews\\ViewPagerIndicator_library\\unspecified\\res\\drawable\\vpi__tab_indicator.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_calendar.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_calendar.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_indicator_text.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\exploded-aar\\BeijingNews\\ViewPagerIndicator_library\\unspecified\\res\\drawable\\vpi__tab_indicator_text.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_tab_indicator.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\custom_tab_indicator.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_location.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_location.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_device_alarms.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_device_alarms.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_camera.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_camera.xml"
+    }
+]
