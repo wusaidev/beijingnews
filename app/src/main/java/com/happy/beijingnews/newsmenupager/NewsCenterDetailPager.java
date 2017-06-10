@@ -1,12 +1,14 @@
 package com.happy.beijingnews.newsmenupager;
 
 import android.content.Context;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
 
 import com.happy.beijingnews.R;
 import com.happy.beijingnews.activity.MainActivity;
@@ -15,7 +17,6 @@ import com.happy.beijingnews.domain.NewsCenterPagerBean2;
 import com.happy.beijingnews.newsmenupager.newstabledetailpager.TabDetailPager;
 import com.happy.beijingnews.urils.LogUtil;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-import com.viewpagerindicator.TabPageIndicator;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -34,8 +35,8 @@ public class NewsCenterDetailPager extends NewsMenuDetailBasePager {
     @ViewInject(R.id.viewpager)
     private ViewPager viewPager;
     //实例化tablepagerIndicator
-    @ViewInject(R.id.tabpageindicator)
-    private TabPageIndicator tabPageIndicator;
+    @ViewInject(R.id.tabl_layout)
+    private TabLayout tabl_layout;
     @ViewInject(R.id.ib_table_next)
     private ImageButton ib_table_next;
     /**
@@ -70,7 +71,10 @@ public class NewsCenterDetailPager extends NewsMenuDetailBasePager {
         }
         viewPager.setAdapter(new TabPagerAdapter());
         //关联viewPager与tabPageIndicator
-        tabPageIndicator.setViewPager(viewPager);
+        //tabl_layout.setViewPager(viewPager);
+        tabl_layout.setupWithViewPager(viewPager);
+        //设置Tab可以滑动，若不可滑动由于太挤文本无法显示
+        tabl_layout.setTabMode(TabLayout.MODE_SCROLLABLE);
         //以后监听viewPager  等操作用tablePagerIndicator
         ib_table_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,10 +83,11 @@ public class NewsCenterDetailPager extends NewsMenuDetailBasePager {
             }
         });
         //监听viewPager只在第0 个页面时可以画出左侧菜单
-        tabPageIndicator.setOnPageChangeListener(new tabPageChangeListener());
+        //tabl_layout.setOnPageChangeListener(new TabPageChangeListener());
+        viewPager.addOnPageChangeListener(new TabPageChangeListener());
     }
 
-    class tabPageChangeListener implements OnPageChangeListener{
+    class TabPageChangeListener implements OnPageChangeListener{
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

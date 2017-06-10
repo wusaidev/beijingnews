@@ -19,6 +19,7 @@ public abstract class NewsMenuDetailBasePager {
         this.context=context;
         rootView=initView();
     }
+
     public abstract View initView();
     public abstract void initData();
 }

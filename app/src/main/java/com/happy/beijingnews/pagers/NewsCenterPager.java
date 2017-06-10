@@ -1,5 +1,6 @@
 package com.happy.beijingnews.pagers;
 
+import android.app.DownloadManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
@@ -7,6 +8,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.happy.beijingnews.activity.MainActivity;
 import com.happy.beijingnews.base.BasePager;
@@ -17,7 +26,7 @@ import com.happy.beijingnews.fragment.LeftMenuFragment;
 import com.happy.beijingnews.newsmenupager.InteracDetailPager;
 import com.happy.beijingnews.newsmenupager.NewsCenterDetailPager;
 import com.happy.beijingnews.newsmenupager.PhotoesDetailPager;
-import com.happy.beijingnews.newsmenupager.TopicDetailPager;
+import com.happy.beijingnews.newsmenupager.TopicMenuDetailPager;
 import com.happy.beijingnews.urils.CacheUtil;
 import com.happy.beijingnews.urils.ConstantValue;
 import com.happy.beijingnews.urils.LogUtil;
@@ -29,8 +38,12 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.android.volley.Response.*;
+import static com.happy.beijingnews.urils.ConstantValue.*;
 
 /**
  * 作者：wusai
@@ -42,6 +55,7 @@ public class NewsCenterPager extends BasePager {
     private String tag = "NewsCenterPager";
     private List<NewsCenterPagerBean2.DataBean2> dataBean2List;
     private List<NewsMenuDetailBasePager> newsDetailPagerList;
+    private long startTime;
 
     /**
      * @param context rootView  返回各個pager頁面方便調用
@@ -74,21 +88,63 @@ public class NewsCenterPager extends BasePager {
         ib_title_menu.setVisibility(View.VISIBLE);
 
 
-        String cacheResult = CacheUtil.getString(context, ConstantValue.NEWSCENTER_PAGER_URL, "");
+        String cacheResult = CacheUtil.getString(context, NEWSCENTER_PAGER_URL, "");
         if (!TextUtils.isEmpty(cacheResult)) {
             processData(cacheResult);
         }
+        startTime =System.currentTimeMillis();
         getDataFromNet();
+        //getDataFromNetWithVolley();
+
     }
 
+    private void getDataFromNetWithVolley() {
+        //请求队列
+        RequestQueue queue= Volley.newRequestQueue(context);
+        //String请求
+        StringRequest request = new StringRequest(Request.Method.GET,
+                NEWSCENTER_PAGER_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                LogUtil.e(tag, "volley联网请求成功了：=========" + response);
+                CacheUtil.putString(context, NEWSCENTER_PAGER_URL, response);
+
+                processData(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                LogUtil.e(tag, "volley联网请求失败了：" + error.getMessage());
+            }
+        }){
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                try {
+                    String parsed = new String(response.data, "UTF-8");
+                    return  Response.success(parsed,HttpHeaderParser.parseCacheHeaders(response));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                return super.parseNetworkResponse(response);
+            }
+        };
+        //添加到队列中
+        queue.add(request);
+    }
+    /**
+     * xUtil请求数据
+     */
     private void getDataFromNet() {
-        RequestParams params = new RequestParams(ConstantValue.NEWSCENTER_PAGER_URL);
+        RequestParams params = new RequestParams(NEWSCENTER_PAGER_URL);
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
+                long endTime=System.currentTimeMillis();
+                long pTime=endTime-startTime;
+                LogUtil.e("联网请求时长=========" , pTime+"");
                 LogUtil.e(tag, "联网请求成功了：" + result);
 
-                CacheUtil.putString(context, ConstantValue.NEWSCENTER_PAGER_URL, result);
+                CacheUtil.putString(context, NEWSCENTER_PAGER_URL, result);
 
                 processData(result);
                 //initDefaultDetailPager();此方法会导致切换主页面  智慧 政要 设置后无法记忆已选择的新闻中心中的详情页面（被初始化）
@@ -142,9 +198,9 @@ public class NewsCenterPager extends BasePager {
         //新闻中心中各个详情页面的集合
         newsDetailPagerList = new ArrayList<>();
         newsDetailPagerList.add(new NewsCenterDetailPager(context,bean2.getData().get(0)));//添加新闻详情页面
-        newsDetailPagerList.add(new TopicDetailPager(context));//添加 专题详情页面
-        newsDetailPagerList.add(new PhotoesDetailPager(context));//添加 组图详情页面
-        newsDetailPagerList.add(new InteracDetailPager(context));//添加 互动详情页面
+        newsDetailPagerList.add(new TopicMenuDetailPager(context,bean2.getData().get(0)));//添加 专题详情页面
+        newsDetailPagerList.add(new PhotoesDetailPager(context,bean2.getData().get(2)));//添加 组图详情页面
+        newsDetailPagerList.add(new InteracDetailPager(context,bean2.getData().get(2)));//添加 互动详情页面
         sendData2LeftMenu();//dataBeanList赋值后为全局变量，不用再传入
 
     }
@@ -252,5 +308,18 @@ public class NewsCenterPager extends BasePager {
         fl_basepager_content.addView(newsDetailPagerList.get(position).rootView);
         newsDetailPagerList.get(position).initData();
         tv_title.setText(dataBean2List.get(position).getTitle());
+        if (position==2){
+            //格式按钮
+            ib_change_format.setVisibility(View.VISIBLE);
+            ib_change_format.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    PhotoesDetailPager photoesPager= (PhotoesDetailPager) newsDetailPagerList.get(2);
+                    photoesPager.switchListAndGrid(ib_change_format);
+                }
+            });
+        }else {
+            ib_change_format.setVisibility(View.GONE);
+        }
     }
 }

@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\build\\intermediates\\res\\merged\\debug\\layout\\jpush_webview_layout.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\res\\layout\\jpush_webview_layout.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\build\\intermediates\\res\\merged\\debug\\layout\\customer_notitfication_layout_one.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\res\\layout\\customer_notitfication_layout_one.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\build\\intermediates\\res\\merged\\debug\\layout\\push_set_dialog.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\res\\layout\\push_set_dialog.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\build\\intermediates\\res\\merged\\debug\\layout\\jpush_popwin_layout.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\res\\layout\\jpush_popwin_layout.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\build\\intermediates\\res\\merged\\debug\\layout\\set_push_time.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\res\\layout\\set_push_time.xml"
+    },
+    {
+        "merged": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\build\\intermediates\\res\\merged\\debug\\layout\\customer_notitfication_layout.xml",
+        "source": "F:\\IT\\Android\\BeijingNews\\JPushExample(651645)\\res\\layout\\customer_notitfication_layout.xml"
+    }
+]

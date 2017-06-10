@@ -35,6 +35,7 @@ public class BasePager {
      * pager內容幀佈局
      */
     public FrameLayout fl_basepager_content;
+    public ImageButton ib_change_format;
 
     /**
      * @param context
@@ -52,6 +53,7 @@ public class BasePager {
     public View initView(){
         View view=View.inflate(context, R.layout.view_basepager,null);
         tv_title = (TextView) view.findViewById(R.id.tv_basepager_title);
+        ib_change_format = (ImageButton) view.findViewById(R.id.ib_title_grid_list_change);
         ib_title_menu = (ImageButton) view.findViewById(R.id.ib_basepager_title_menu);
         fl_basepager_content = (FrameLayout) view.findViewById(R.id.fl_basepager_content);
         ib_title_menu.setOnClickListener(new View.OnClickListener() {

@@ -45,8 +45,8 @@
                     "startLine": 4,
                     "startColumn": 4,
                     "startOffset": 183,
-                    "endColumn": 64,
-                    "endOffset": 243
+                    "endColumn": 63,
+                    "endOffset": 242
                 },
                 "from": {
                     "file": "F:\\IT\\Android\\BeijingNews\\pullToRefreshViewPager\\build\\intermediates\\exploded-aar\\BeijingNews\\PullToRefresh_library\\unspecified\\res\\values-zh\\values-zh.xml",
@@ -54,8 +54,8 @@
                         "startLine": 4,
                         "startColumn": 4,
                         "startOffset": 183,
-                        "endColumn": 64,
-                        "endOffset": 243
+                        "endColumn": 63,
+                        "endOffset": 242
                     }
                 }
             }

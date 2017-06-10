@@ -27,5 +27,11 @@ public class ConstantValue {
      */
     public static final String NEWSCENTER_PAGER_URL=BASE_URL+"/static/api/news/categories.json";
     public static final String REFRESH_TIME="refresh_time";
+
+    /**
+     * 读过新闻id的存储 key
+     */
+    public static final String READ_ARRAY_ID="read_array_id";
+    public static final String WEB_TEXT_SIZE="web_text_size";
     //http://192.168.1.103:8080/web_home/static/api/news/categories.json" ;
 }

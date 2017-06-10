@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 16
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 24
+    buildToolsVersion '24.0.3'
 
     defaultConfig {
     }
@@ -16,6 +16,4 @@ android {
 }
 
 dependencies {
-    compile project(':PullToRefresh_library')
-    compile 'com.android.support:support-v4:18.+'
 }

@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidAndJs/AndroidAndJs.iml" filepath="$PROJECT_DIR$/AndroidAndJs/AndroidAndJs.iml" />
       <module fileurl="file://$PROJECT_DIR$/BeijingNews.iml" filepath="$PROJECT_DIR$/BeijingNews.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JPushExample(651645)/JPushExample(651645).iml" filepath="$PROJECT_DIR$/JPushExample(651645)/JPushExample(651645).iml" />
       <module fileurl="file://$PROJECT_DIR$/PullToRefresh_library/PullToRefresh_library.iml" filepath="$PROJECT_DIR$/PullToRefresh_library/PullToRefresh_library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PullToRefresh_sample/PullToRefresh_sample.iml" filepath="$PROJECT_DIR$/PullToRefresh_sample/PullToRefresh_sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/SlidingMenu_library/SlidingMenu_library.iml" filepath="$PROJECT_DIR$/SlidingMenu_library/SlidingMenu_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicator_library/ViewPagerIndicator_library.iml" filepath="$PROJECT_DIR$/ViewPagerIndicator_library/ViewPagerIndicator_library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicator_sample/ViewPagerIndicator_sample.iml" filepath="$PROJECT_DIR$/ViewPagerIndicator_sample/ViewPagerIndicator_sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VolleyDemo/VolleyDemo.iml" filepath="$PROJECT_DIR$/VolleyDemo/VolleyDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/pullToRefreshListFragment/pullToRefreshListFragment.iml" filepath="$PROJECT_DIR$/pullToRefreshListFragment/pullToRefreshListFragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/pullToRefreshViewPager/pullToRefreshViewPager.iml" filepath="$PROJECT_DIR$/pullToRefreshViewPager/pullToRefreshViewPager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xUtils3_ample/xUtils3_ample.iml" filepath="$PROJECT_DIR$/xUtils3_ample/xUtils3_ample.iml" />
       <module fileurl="file://$PROJECT_DIR$/xutils/xutils.iml" filepath="$PROJECT_DIR$/xutils/xutils.iml" />
     </modules>
   </component>
